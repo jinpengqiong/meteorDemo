@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
-import { useTracker } from 'meteor/react-meteor-data';
-import { LinksCollection } from '../api/links';
 
 export const Hello = () => {
-  let counter;
-  useTracker(() => {
-    counter = LinksCollection.find();
-  });
+  const [counter, setCounter] = useState(0);
+
   const increment = () => {
-    LinksCollection.insert(counter + 1);
+    setCounter(counter + 1);
   };
 
   return (
