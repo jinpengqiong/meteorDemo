@@ -1,18 +1,17 @@
 import React from 'react';
 import { useTracker } from 'meteor/react-meteor-data';
-import { LinksCollection } from '../api/links';
+import { ListsCollection } from '../api/lists';
 
 export const Info = () => {
-  const links = useTracker(() => {
-    return LinksCollection.find().fetch();
+  const lists = useTracker(() => {
+    return ListsCollection.find().fetch();
   });
-  console.log('links :>> ', links);
   return (
     <div>
       <h2>Learn Meteor</h2>
-      <ul>{links.map(
-        link => <li key={link._id}>
-          <a href={link.url} target="_blank">{link.title}</a>
+      <ul>{lists.map(
+        list => <li key={list._id}>
+          <a href={list.url} target="_blank">{list.title}</a>
         </li>
       )}</ul>
     </div>
