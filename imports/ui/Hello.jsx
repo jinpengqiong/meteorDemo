@@ -7,6 +7,7 @@ export const Hello = () => {
   const result = useTracker(() => {
     return LinkCollection.find().fetch();
   })
+  console.log('result :>> ', result);
   const [counter, setCounter] = useState(0);
 
   const increment = () => {
