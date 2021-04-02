@@ -21,6 +21,15 @@ Meteor.methods({
     // }
     ListsCollection.insert(obj);
   },
+  'lists.remove'(taskId) {
+    // check(taskId, String);
+
+    // if (!this.userId) {
+    //   throw new Meteor.Error('Not authorized.');
+    // }
+
+    ListsCollection.remove(taskId);
+  },
   'link.remove'(taskId) {
     check(taskId, String);
 
