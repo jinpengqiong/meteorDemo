@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import { ListsCollection } from '../api/lists';
+import { ListsCollection } from '../db/lists';
 
 export const Info = () => {
   const lists = useTracker(() => {

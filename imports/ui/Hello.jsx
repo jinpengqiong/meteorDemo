@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import { ListsCollection } from '../api/lists';
-import { LinkCollection } from '../api/link';
+import { LinkCollection } from '../db/link';
 
 export const Hello = () => {
 

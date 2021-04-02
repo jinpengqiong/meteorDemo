@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-import { ListsCollection } from '/imports/api/lists';
-import { LinkCollection } from '/imports/api/link';
+import { ListsCollection } from '/imports/db/lists';
+import { LinkCollection } from '/imports/db/link';
 import '/imports/api/linkPublication';
 import '/imports/api/listsPublication';
 import '/imports/api/linkMethods'

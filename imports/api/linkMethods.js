@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
-import { LinkCollection } from './link';
-import { ListsCollection } from './lists';
+import { LinkCollection } from '../db/link';
+import { ListsCollection } from '../db/lists';
 
 
 Meteor.methods({
