@@ -8,7 +8,6 @@ export const Info = () => {
     Meteor.subscribe('lists');
     return ListsCollection.find().fetch();
   });
-  console.log('lists :>> ', lists);
   return (
     <div>
       <h2>Learn Meteor</h2>

@@ -9,19 +9,11 @@ export const Hello = () => {
   const result = useTracker(() => {
     Meteor.subscribe('link');
     return LinkCollection.find().fetch();
-  })
-  console.log('result :>> ', result);
+  })s
   const [counter, setCounter] = useState(0);
 
   const increment = () => {
     setCounter(counter + 1);
-    // ListsCollection.insert({
-    //   title: counter + 1,
-    //   url: 'https://github.com/jinpengqiong',
-    // });
-    // LinkCollection.insert({
-    //   count: counter + 1,
-    // });
     Meteor.call('lists.insert', {
       title: counter + 1,
       url: 'https://github.com/jinpengqiong',
