@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { ListsCollection } from '../api/lists';
 import { LinkCollection } from '../api/link';
 
 export const Hello = () => {
+
   const result = useTracker(() => {
+    Meteor.subscribe('link');
     return LinkCollection.find().fetch();
   })
   console.log('result :>> ', result);
@@ -12,13 +15,18 @@ export const Hello = () => {
 
   const increment = () => {
     setCounter(counter + 1);
-    ListsCollection.insert({
+    // ListsCollection.insert({
+    //   title: counter + 1,
+    //   url: 'https://github.com/jinpengqiong',
+    // });
+    // LinkCollection.insert({
+    //   count: counter + 1,
+    // });
+    Meteor.call('lists.insert', {
       title: counter + 1,
       url: 'https://github.com/jinpengqiong',
     });
-    LinkCollection.insert({
-      count: counter + 1,
-    });
+    Meteor.call('link.insert', counter + 1);
   };
 
   return (
