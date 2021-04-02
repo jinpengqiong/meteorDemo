@@ -9,7 +9,7 @@ export const Hello = () => {
   const result = useTracker(() => {
     Meteor.subscribe('link');
     return LinkCollection.find().fetch();
-  })s
+  })
   const [counter, setCounter] = useState(0);
 
   const increment = () => {
