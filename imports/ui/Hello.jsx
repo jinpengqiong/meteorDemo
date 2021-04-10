@@ -5,7 +5,7 @@ import { LinkCollection } from '../db/link';
 
 export const Hello = () => {
 
-  const result = useTracker(() => {
+  useTracker(() => {
     Meteor.subscribe('link');
     return LinkCollection.find().fetch();
   })
