@@ -6,7 +6,7 @@ import { ListsCollection } from '../db/lists';
 
 Meteor.methods({
   'link.insert'(text) {
-    // check(text, int);
+    check(text, Number);
     // if (!this.userId) {
     //   throw new Meteor.Error('Not authorized.');
     // }
@@ -15,15 +15,14 @@ Meteor.methods({
     });
   },
   'lists.insert'(obj) {
-    // check(text, int);
+    check(obj, Object);
     // if (!this.userId) {
     //   throw new Meteor.Error('Not authorized.');
     // }
     ListsCollection.insert(obj);
   },
   'lists.remove'(taskId) {
-    // check(taskId, String);
-
+    check(taskId, String);
     // if (!this.userId) {
     //   throw new Meteor.Error('Not authorized.');
     // }
@@ -32,10 +31,9 @@ Meteor.methods({
   },
   'link.remove'(taskId) {
     check(taskId, String);
-
-    if (!this.userId) {
-      throw new Meteor.Error('Not authorized.');
-    }
+    // if (!this.userId) {
+    //   throw new Meteor.Error('Not authorized.');
+    // }
 
     LinkCollection.remove(taskId);
   },
