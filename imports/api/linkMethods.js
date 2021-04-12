@@ -15,7 +15,10 @@ Meteor.methods({
     });
   },
   'lists.insert'(obj) {
-    check(obj, Object);
+    check(obj, {
+      title: Number,
+      url: String,
+    });
     // if (!this.userId) {
     //   throw new Meteor.Error('Not authorized.');
     // }
