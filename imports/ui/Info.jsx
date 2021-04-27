@@ -9,8 +9,8 @@ export const Info = () => {
     Meteor.subscribe('lists');
     return ListsCollection.find().fetch();
   });
-  const handleDelete = (title) => {
-    Meteor.call('lists.remove', { title });
+  const handleDelete = (taskId) => {
+    Meteor.call('lists.remove', taskId);
   };
   return (
     <div>
@@ -22,7 +22,7 @@ export const Info = () => {
               {list.title}
             </a>
             &nbsp;&nbsp;
-            <span className="deleteIcon" onClick={() => handleDelete(list.title)}>
+            <span className="deleteIcon" onClick={() => handleDelete(list._id)}>
               X
             </span>
           </li>
